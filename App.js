@@ -1,27 +1,24 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableHightlight } from 'react-native';
-
+// the ./ means same folder structure level
+import Input from './Component/Input/input';
 
 
 export default class App extends React.Component {
-
   state = {
-    count: 0
+    value: ''
   }
-  //function syntax
-  increasebyOne = () => {
-    console.log('pressed')
-  }
+
+//prop is a channel to pass info from an instance to the class
 
   render() {
     return (
       <View style={styles.container}>
-        <TouchableHightlight
-          onPress={this.increaseByOne}
-          style={styles.button}
+        <Input
+          value={this.state.value}
+          onChange={(value)=>this.setState({value: value})}
         >
-        <Text>Submit</Text>
-        </TouchableHightlight>
+        </Input>
         <Text>Open up App.js to start working on your app!</Text>
         <Text>Changes you make will automatically reload.</Text>
         <Text>fuck</Text>
